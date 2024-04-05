@@ -1,0 +1,80 @@
+body,
+.page,
+.page * {
+    margin:0;
+    padding:0;
+    box-sizing:border-box
+}
+noscript{
+    font-size:12px
+}
+.page,
+.page>*,
+article,
+article>div{
+    display:flex;
+    flex-direction:column
+}
+.page{
+    min-height:100vh;
+    background-color:rgba(0,40,0,.1);
+    border:10px solid darkgreen;
+    justify-content:space-between;
+    align-items:stretch
+}
+.page>*
+article,
+article>div{
+    justify-content:center;
+    align-items:center
+}
+header,footer{
+    background-color:rgba(255,0,0,.1);
+    flex-basis:50px;
+    text-align:center
+}
+main{
+    outline:8px solid rgba(255,0,0,.4);
+    outline-offset:-8px;
+    flex-grow:1
+}
+article{
+    outline:4px solid rgba(0,128,0,.7);
+    outline-offset:-4px;
+    width:min(500px,100%);
+    min-height:500px
+}
+#box{
+    outline:2px solid purple;
+    outline-offset:-8px;
+    position:relative;
+    background:no-repeat center/100% url('./circle.svg')
+}
+canvas{
+    outline:2px solid red;
+    outline-offset:-45px;
+    z-index:1
+}
+#plan{
+    width:400px;
+    height:400px;
+    position:absolute;
+    z-index:4;
+    background-color:rgba(0,128,0,.1);
+    border-radius:50%;
+    cursor:pointer;
+    opacity:1
+}
+#plan:focus{
+    opacity:.5
+}
+@media (max-width:500px){
+    #box{
+        transform:scale(.7)
+    }
+}
+@media (max-width:350px){
+    #box{
+        transform:scale(.5)
+    }
+}
