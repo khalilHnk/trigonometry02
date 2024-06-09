@@ -17,7 +17,7 @@ article>div{
 }
 .page{
     min-height:100vh;
-    background-color:rgba(0,40,0,.1);
+    background-color:rgba(0,0,40,.1);
     justify-content:space-between;
     align-items:stretch
 }
