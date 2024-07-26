@@ -16,6 +16,7 @@ article>div{
     flex-direction:column
 }
 .page{
+    font-family:sans-serif;
     min-height:100vh;
     background-color:rgba(0,0,40,.1);
     justify-content:space-between;
