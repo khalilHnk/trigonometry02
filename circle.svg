@@ -7,6 +7,7 @@
             <line x1="0" y1="200" x2="0" y2="-200" />
         </g>
         <rect x="-200" y="-200" width="400" height="400" fill="transparent"/>
+        <circle cx="0" cy="0" r="40" fill="transparent"/>
         <circle cx="0" cy="0" r="200" fill="transparent"/>
     </g>
 </svg>
