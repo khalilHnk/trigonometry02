@@ -1,5 +1,6 @@
-'use strict'
+import draw from './modules/utils.js';
 console.log('main:debut');
+draw();
 function checkElement(x, w) {
   return (x instanceof HTMLElement && x.offsetWidth === w && x.offsetHeight === x.offsetWidth);
 }
