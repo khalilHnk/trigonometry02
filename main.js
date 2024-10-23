@@ -40,6 +40,7 @@ function checkElement(x, w) {
             console.log(x,y);
             
             ctx.clearRect(-MW,-MW,2*MW,2*MW);
+            
             ctx.begintPath();
             ctx.arc(x,y,5,0,2*Math.PI);
             ctx.stroke();
