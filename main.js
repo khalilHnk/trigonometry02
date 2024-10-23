@@ -20,8 +20,6 @@ console.log('main:debut');
           throw new Error('elements:failed');
         }
 
-        console.log('%celements:success','color:blue');
-
         ctx.setTransform(sx,0,0,sy,MW,MW);
         ctx.fillStyle = 'white';
         ctx.strokeStyle = 'rgba(0,0,0,.8)';
@@ -30,7 +28,6 @@ console.log('main:debut');
         p.addEventListener(
           'mouseup',
           (e) => {
-            console.log(`event: ${e.target.id} & ${e.type}`,'color:purple');
             let [x, y] = [
               sx * (e.offsetX - R),
               sy * (e.offsetX - R),
@@ -45,10 +42,6 @@ console.log('main:debut');
           },
           false
         );
-
-        
-        
-        
       } catch(err) {
         console.error(err.message);
       }
