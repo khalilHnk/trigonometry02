@@ -1,8 +1,6 @@
 import utils from './modules/utils.js';
 console.log('main:debut');
-function checkElement(x, w) {
-  return (x instanceof HTMLElement && x.offsetWidth === w && x.offsetHeight === x.offsetWidth);
-}
+
 (function main(R = 200, MW = 250, sx = 1, sy = -1){
   if (typeof window !== 'object' || window.top !== window.self) {
     console.warn('window:failed');
