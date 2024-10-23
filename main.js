@@ -24,6 +24,16 @@ function checkElement(x, w) {
         }
 
         console.log('%celements:success','color:blue');
+
+        p.addEventListener(
+          'mouseup',
+          (e) => {
+            console.log(`event: ${e.target.id} & ${e.type}`,'color:purple');
+          },
+          false
+        );
+
+        
         
         
       } catch(err) {
