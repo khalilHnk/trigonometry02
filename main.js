@@ -4,7 +4,7 @@ draw();
 function checkElement(x, w) {
   return (x instanceof HTMLElement && x.offsetWidth === w && x.offsetHeight === x.offsetWidth);
 }
-(function main(R = 200, MW = 250){
+(function main(R = 200, MW = 250, sx = 1, sy = -1){
   if (typeof window !== 'object' || window.top !== window.self) {
     console.warn('window:failed');
     return;
@@ -13,10 +13,10 @@ function checkElement(x, w) {
     'load',
     () => {
       try {
-        const c = document.getElementById('box')?.querySelector('canvas')?.getContext('2d');
+        const ctx = document.getElementById('box')?.querySelector('canvas')?.getContext('2d');
         const p = document.getElementById('box')?.querySelector('#plan');
         if (!(
-          c instanceof CanvasRenderingContext2D && checkElement(c.canvas, 2 * MW)
+          ctx instanceof CanvasRenderingContext2D && checkElement(ctx.canvas, 2 * MW)
           && checkElement(p, 2 * R)
         ))
         {
@@ -29,6 +29,11 @@ function checkElement(x, w) {
           'mouseup',
           (e) => {
             console.log(`event: ${e.target.id} & ${e.type}`,'color:purple');
+            let [x, y] = [
+              sx * (e.offsetX - R),
+              sy * (e.offsetX - R),
+            ];
+            console.log(x,y);
           },
           false
         );
