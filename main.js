@@ -30,10 +30,9 @@ console.log('main:debut');
           (e) => {
             let [x, y] = [
               sx * (e.offsetX - R),
-              sy * (e.offsetX - R),
+              sy * (e.offsetY - R),
             ];
-            console.log(x,y);
-            
+
             ctx.clearRect(-MW,-MW,2*MW,2*MW);
             
             ctx.beginPath();
