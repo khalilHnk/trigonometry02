@@ -1,5 +1,9 @@
-function draw() {
-  console.log('draw called');
-}
+const utils = {
+  check() {
+    
+  },
+};
 
-export default draw;
+
+
+export default utils;
