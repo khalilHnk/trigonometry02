@@ -1,6 +1,5 @@
-import draw from './modules/utils.js';
+import utils from './modules/utils.js';
 console.log('main:debut');
-draw();
 function checkElement(x, w) {
   return (x instanceof HTMLElement && x.offsetWidth === w && x.offsetHeight === x.offsetWidth);
 }
@@ -16,14 +15,19 @@ function checkElement(x, w) {
         const ctx = document.getElementById('box')?.querySelector('canvas')?.getContext('2d');
         const p = document.getElementById('box')?.querySelector('#plan');
         if (!(
-          ctx instanceof CanvasRenderingContext2D && checkElement(ctx.canvas, 2 * MW)
-          && checkElement(p, 2 * R)
+          ctx instanceof CanvasRenderingContext2D && utils.check(ctx.canvas, 2 * MW)
+          && utils.check(p, 2 * R)
         ))
         {
           throw new Error('elements:failed');
         }
 
         console.log('%celements:success','color:blue');
+
+        ctx.setTransform(sx,0,0,sy,MW,MW);
+        ctx.fillStyle = 'white';
+        ctx.strokeStyle = 'rgba(0,0,0,.8)';
+        ctx.lineWidth = 2;
 
         p.addEventListener(
           'mouseup',
@@ -34,6 +38,11 @@ function checkElement(x, w) {
               sy * (e.offsetX - R),
             ];
             console.log(x,y);
+            
+            ctx.clearRect(-MW,-MW,2*MW,2*MW);
+            ctx.begintPath();
+            ctx.arc(x,y,5,0,2*Math.PI);
+            ctx.stroke();
           },
           false
         );
