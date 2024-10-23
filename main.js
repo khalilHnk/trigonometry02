@@ -36,8 +36,9 @@ console.log('main:debut');
             
             ctx.clearRect(-MW,-MW,2*MW,2*MW);
             
-            ctx.begintPath();
+            ctx.beginPath();
             ctx.arc(x,y,5,0,2*Math.PI);
+            ctx.fill();
             ctx.stroke();
           },
           false
